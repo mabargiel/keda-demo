@@ -1,5 +1,5 @@
 resource "azurerm_storage_account" "keda" {
-  name                     = "kedafunc"
+  name                     = "avanadekedafunc"
   resource_group_name      = "${azurerm_resource_group.keda.name}"
   location                 = "${azurerm_resource_group.keda.location}"
   account_tier             = "Standard"
