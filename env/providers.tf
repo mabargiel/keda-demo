@@ -1,13 +1,11 @@
 provider "azurerm" {
   subscription_id = "${var.subscription_id}"
-  version         = "~> 1.27"
   client_id       = "${var.client_id}"
   client_secret   = "${var.client_secret}"
   tenant_id       = "${var.tenant_id}"
 }
 
 provider "azuread" {
-  version = "~>0.1.0"
   client_id       = "${var.client_id}"
   client_secret   = "${var.client_secret}"
   tenant_id       = "${var.tenant_id}"
@@ -15,7 +13,6 @@ provider "azuread" {
 }
 
 provider "random" {
-  version = "~> 1.3"
 }
 
 provider "kubernetes" {
@@ -27,11 +24,9 @@ provider "kubernetes" {
 }
 
 provider "tls" {
-  version = "~> 1.2"
 }
 
 provider "helm" {
-  version = "~> 0.9"
   service_account = "clustertiller"
 
     kubernetes {
