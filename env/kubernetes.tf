@@ -16,7 +16,7 @@ resource "kubernetes_secret" "demo" {
 
   # terraform states this is a map of the variables here, it actual wants a structured json object
   # https://github.com/terraform-providers/terraform-provider-kubernetes/issues/81
-  data {
+  data = {
     ".dockercfg" = "${ jsonencode(local.dockercfg) }"
   }
 
@@ -29,7 +29,7 @@ resource "kubernetes_secret" "queue" {
     namespace = "default"
   }
 
-  data {
+  data = {
     "queueConnectionString" = "${azurerm_storage_account.keda.primary_connection_string}"
   }
 }
